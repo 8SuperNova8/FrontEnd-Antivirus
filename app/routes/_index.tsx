@@ -1,6 +1,8 @@
 import type { MetaFunction } from "@remix-run/node";
+import Inicio from "~/components/Inicio";
 
 import Navbar from "~/components/Navbar";
+import Oportunity from "~/components/Oportunity";
 
 export const meta: MetaFunction = () => {
   return [
@@ -14,9 +16,8 @@ export default function Index() {
   return (
     <div className="font-sans bg-gray-100">
       <Navbar></Navbar>
-      <div>
-        <h1>Este es el Index</h1>
-      </div>
+      <Inicio/>
+      <Oportunity/>
     </div>
 
   );
