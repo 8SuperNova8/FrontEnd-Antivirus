@@ -1,5 +1,5 @@
 import { useActionData, useNavigation, Form } from "@remix-run/react";
-import Header from "../components/Header";
+import Navbar from "../components/Navbar";
 import { json, LoaderFunction, redirect } from "@remix-run/node";
 import { FaKey, FaEye, FaEyeSlash } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
@@ -7,7 +7,6 @@ import { useState, useEffect  } from "react";
 import Swal from "sweetalert2";
 import { loginUser } from "~/utils/auth";
 import { getCookie } from "~/utils/cookies";
-
 
 export const action = async ({ request }: { request: Request }) => {
     const formData = await request.formData();
@@ -63,7 +62,7 @@ export default function Login (){
     
     return(
         <div>
-            <Header></Header>     
+            <Navbar></Navbar>     
             <div className="flex min-h-screen items-center justify-center bg-gray-100">
                 <div className="flex w-full max-w-4xl bg-white overflow-hidden -translate-y-10">
                     {/* Sección de la imagen */}
