@@ -63,10 +63,10 @@ export default function Oportunity(){
                {SimulationBD.map((data)=>(
                 <SwiperSlide key={data.id} className="ps-10">
                     <div>
-                        <img src={data.image} alt={data.title} className="h-[400px] pb-10"/>
+                        <img src={data.image} alt={data.title} className="h-[400px] pb-6"/>
                     </div>
                     <div>
-                        <h4 className="font-bold text-3xl">{data.title}</h4>
+                        <h4 className="font-semibold text-3xl">{data.title}</h4>
                         <p className="text-2xl">{data.description}</p>
                     </div>
 
