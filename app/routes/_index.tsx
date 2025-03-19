@@ -1,16 +1,13 @@
 import type { MetaFunction } from "@remix-run/node";
 import Inicio from "~/components/Inicio";
-
-import Navbar from "~/components/Navbar";
 import Oportunity from "~/components/Oportunity";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Antivirus" },
-    
+    { title: "Inicio - App Fundación Antivirus" },
+    { name: "description", content: "Página de inicio de Antivirus" },
   ];
 };
-
 
 export default function Index() {
   return (
@@ -22,4 +19,3 @@ export default function Index() {
 
   );
 }
-
