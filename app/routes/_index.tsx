@@ -1,6 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
 import Inicio from "~/components/Inicio";
 import Oportunity from "~/components/Oportunity";
+import Navbar from "~/components/Header"
 
 export const meta: MetaFunction = () => {
   return [
