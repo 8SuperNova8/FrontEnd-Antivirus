@@ -1,14 +1,54 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "@remix-run/react";
 
-export default function Header() {
+export default function Header({ isLoggedIn }) {
+  
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState("ESP");
-  const [darkMode, setDarkMode] = useState(false);
+  
+  const [currentLanguage, setCurrentLanguage] = useState(() => {
+    return typeof window !== "undefined" && localStorage.getItem("language")
+      ? localStorage.getItem("language")
+      : "ESP";
+  });
+  
+  
+  const [darkMode, setDarkMode] = useState(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("theme") === "dark";
+    }
+    return false;
+  });
+
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedLanguage = localStorage.getItem("language");
+      if (storedLanguage) {
+        setCurrentLanguage(storedLanguage);
+      }
+    }
+  }, []);
+
+  
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
 
   const toggleModal = () => setIsModalOpen(!isModalOpen);
-  const toggleLanguage = () => setCurrentLanguage(currentLanguage === "ESP" ? "ENG" : "ESP");
-  const toggleDarkMode = () => setDarkMode(!darkMode);
+  
+  const toggleLanguage = () => {
+    const newLanguage = currentLanguage === "ESP" ? "ENG" : "ESP";
+    setCurrentLanguage(newLanguage);
+    localStorage.setItem("language", newLanguage);
+  };
+  
+  const toggleDarkMode = () => setDarkMode((prev) => !prev);
 
   return (
     <>
@@ -24,10 +64,17 @@ export default function Header() {
             </Link>
 
             {/* Se crea navbar */}
-
+            
             <nav className="hidden md:flex space-x-6">
               <Link to="/" className="text-white hover:text-yellow-300">
                 Inicio
+              </Link>
+
+              <Link
+                to={isLoggedIn ? "/novedades" : "/?oportunidades"}
+                className="text-white hover:text-yellow-300"
+              >
+                Oportunidades
               </Link>
 
               <Link
@@ -35,13 +82,6 @@ export default function Header() {
                 className="text-white hover:text-yellow-300"
               >
                 Servicios
-              </Link>
-
-              <Link
-                to="/novedades"
-                className="text-white hover:text-yellow-300"
-              >
-                Oportunidades
               </Link>
             </nav>
 
@@ -91,7 +131,7 @@ export default function Header() {
               to="/register"
               className="px-4 py-2 bg-white text-[#32526E] rounded-md font-semibold shadow hover:bg-yellow-300 transition"
             >
-              Registaté
+              Registraté
             </Link> */}
           </div>
 
@@ -111,10 +151,9 @@ export default function Header() {
               onClick={toggleDarkMode}
               className="transition-transform transform hover:scale-110"
             >
-              <img
-                src="/assets/images/modo-oscuro.png"
-                alt={darkMode ? "Light Mode" : "Dark Mode"}
-                className="w-12 h-12 object-contain filter invert brightness-0"
+              <img src={darkMode ? "/assets/images/modo-claro.png" : "/assets/images/modo-oscuro.png"} 
+              alt={darkMode ? "Light Mode" : "Dark Mode"} 
+              className="w-12 h-12 object-contain filter invert brightness-0"
               />
             </button>
           </div>

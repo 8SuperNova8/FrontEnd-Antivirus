@@ -34,7 +34,7 @@ const Footer = () => {
 
         {/* LinkedIn */}
         <a
-          href="https://www.linkedin.com/in/somosantivirus"
+          href="https://www.linkedin.com/company/antivirus-desercion/?originalSubdomain=co"
           target="_blank"
           rel="noopener noreferrer"
         >
