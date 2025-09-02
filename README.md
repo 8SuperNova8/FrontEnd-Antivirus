@@ -1,4 +1,4 @@
-<h1 align="center"> FUNDACIÓN ANTIVIRUS PARA LA DESERPCIÓN </h1>
+<h1 align="center"> FUNDACIÓN ANTIVIRUS PARA LA DESERCIÓN </h1>
 
 ## 🎯 Descripción
 Es una plataforma digital que centraliza oportunidades como becas, créditos,
@@ -25,12 +25,12 @@ usuario fluida en múltiples dispositivos.
 ## 👀 Cacturas Del Proyectos
 <p >
 <img src="public/assets/webPageScreenshots/landing.png" alt="imagen landing" width="600">
-<img src="public/assets/webPageScreenshots/Sobrenosotros.png" alt="imagen landing" width="560">
+<img src="public/assets/webPageScreenshots/Sobrenosotros.png" alt="imagen landing" width="600">
 <img src="public/assets/webPageScreenshots/oportunidades.png" alt="imagen landing" width="600">
 <img src="public/assets/webPageScreenshots/Register.png" alt="imagen landing" width="600">
-<img src="public/assets/webPageScreenshots/Login.png" alt="imagen landing" width="550">
+<img src="public/assets/webPageScreenshots/Login.png" alt="imagen landing" width="700">
 <img src="public/assets/webPageScreenshots/panelAdministrativo.png" alt="imagen landing" width="700">
-<img  src="public/assets/webPageScreenshots/gestionOportunidadest.png" alt="imagen landing" width="800">
+<img  src="public/assets/webPageScreenshots/gestionOportunidadest.png" alt="imagen landing" width="700">
 </p>
 
 ## 🛠️ Tecnologias y Herramientas
