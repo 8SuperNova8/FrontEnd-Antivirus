@@ -22,7 +22,7 @@ directo.
 usuario fluida en múltiples dispositivos.
 9. Documentar el sistema con manuales, diagramas y guías de instalación.
 
-## 👀 Cacturas Del Proyectos
+## 👀 Capturas Del Proyectos
 <p >
 <img src="public/assets/webPageScreenshots/landing.png" alt="imagen landing" width="600">
 <img src="public/assets/webPageScreenshots/Sobrenosotros.png" alt="imagen landing" width="600">
